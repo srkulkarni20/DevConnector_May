@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
+const path = require('path');
 const posts = require('./routes/api/posts');
 const app = express(); 
 const passport = require('passport');
@@ -38,10 +39,17 @@ app.use('/api/users',users);
 app.use('/api/profile',profile);
 app.use('/api/posts',posts);
 
+if (process.env.NODE_ENV === 'production'){
+  app.use(express.static('client/build'));
+  app.get('*', (req,res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html' ))
+  });
+}
 
 
 
-const port = 9990; 
+
+const port = process.env.PORT || 9990; 
 //Ask express to listen on this port
 //string inference in js using $
 app.listen(port,() => console.log(`server is running on port ${port}`));
