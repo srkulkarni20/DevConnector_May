@@ -9,7 +9,7 @@ const Post = require('../../models/Post');
 const Profile = require('../../models/Profile');
 
 // Validation
-const validatePostInput = require('../../Validation/post');
+const validatePostInput = require('../../validation/post');
 // @route   GET api/posts
 // @desc    Get posts
 // @access  Public
