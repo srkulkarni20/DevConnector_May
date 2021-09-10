@@ -31,7 +31,7 @@ mongoose
 
 //first route app.get is a function when user comes to '/' ths route then call   ///the function with input req and res .Its also called callback
 
-app.get('/', (req,res)=>res.send('Hello World 234')); 
+
 console.log("hello");
 //When it come to hime page just send hello back
 //route /api/users gets redirected to users.js file
