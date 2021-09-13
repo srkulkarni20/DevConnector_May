@@ -8,7 +8,7 @@ Application has following features:
   * All developers profile existing in database can be accessed.
 
 Techonologies used:
-Server side : Node.js for api  and Express for routing
+Server side : Node.js,javascript for server side REST api development and Express for routing
 Client Side : React framework with use of redux storage to exchange data between various react components.
 Database: MongoDb
   
